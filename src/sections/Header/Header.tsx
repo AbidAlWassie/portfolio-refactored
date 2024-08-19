@@ -13,7 +13,7 @@ const Header = () => {
           <p className="text">{"I'm a freelance web developer."}</p>
           <div className="cta">
             <a href="mailto:abidalwassie@outlook.com" className="btn email">Contact Me</a>
-            <a href={images.email} download className="btn secondary-btn">Download CV</a>
+            <a href="#" className="btn secondary-btn">Download CV</a>
           </div>
         </div>
 

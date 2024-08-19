@@ -1,3 +1,5 @@
+// YouTubeCard.tsx
+
 import Image from 'next/image';
 import { AiFillCopy } from 'react-icons/ai';
 import { FaPlay } from 'react-icons/fa';
