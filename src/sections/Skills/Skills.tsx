@@ -1,5 +1,7 @@
-// "use client";
+"use client";
+
 import Image from 'next/image';
+import useScrollEffects from '../../hooks/useScrollEffects';
 import { images } from '../../refs';
 
 const skillsData = [
@@ -21,6 +23,9 @@ const skillsData = [
 ];
 
 const Skills = () => {
+
+  useScrollEffects();
+  
   return (
     <div className="skills section" id="skills">
       <div className="container flex justify-between items-center mx-auto">

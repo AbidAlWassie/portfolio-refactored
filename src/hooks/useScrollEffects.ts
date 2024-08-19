@@ -4,21 +4,26 @@ import { useEffect } from 'react';
 
 export default function useScrollEffects() {
   useEffect(() => {
+    function handleScroll() {
+      stickyNav();
+      activeLink();
+      loadSkills();
+      mlCounter();
+    }
+
     function stickyNav() {
       const navbar = document.querySelector(".navbar");
-      if (navbar !== null) {
+      if (navbar) {
         navbar.classList.toggle("scrolled", window.pageYOffset > 0);
       }
     }
 
     function updateCount(num: HTMLElement, maxNum: number): void {
-      let currentNum: number = +num.innerText;
+      let currentNum = +num.innerText;
 
       if (currentNum < maxNum) {
-      num.innerText = (currentNum + 1).toString();
-      setTimeout(() => {
-        updateCount(num, maxNum);
-      }, 12);
+        num.innerText = (currentNum + 1).toString();
+        setTimeout(() => updateCount(num, maxNum), 12);
       }
     }
 
@@ -29,12 +34,12 @@ export default function useScrollEffects() {
 
     function loadSkills() {
       const skCounters = document.querySelectorAll(".counter span");
-      const progressBars: SVGCircleElement[] = Array.from(document.querySelectorAll(".sk-progress svg circle"));
+      const progressBars = Array.from(document.querySelectorAll<SVGCircleElement>(".sk-progress svg circle"));
 
-      if (skCounters.length > 0 && isInViewport(skCounters[0], 0)) {
+      if (skCounters.length > 0 && isInViewport(skCounters[0])) {
         skCounters.forEach((counter, i) => {
           const cvalue = Number((counter as HTMLElement).dataset.target);
-          let strokeValue = 427 - 427 * (cvalue / 100);
+          const strokeValue = 427 - 427 * (cvalue / 100);
           progressBars[i].style.animation = "progress 2s ease-in-out forwards";
           progressBars[i].style.setProperty("--target", strokeValue.toString());
 
@@ -45,10 +50,10 @@ export default function useScrollEffects() {
 
     function mlCounter() {
       const mlCounters = document.querySelectorAll(".number span");
-    
+
       if (mlCounters.length > 0 && isInViewport(mlCounters[0], -250)) {
         mlCounters.forEach(counter => {
-          let mvalue = Number((counter as HTMLElement).dataset.target);
+          const mvalue = Number((counter as HTMLElement).dataset.target);
           setTimeout(() => updateCount(counter as HTMLElement, mvalue), 1000);
         });
       }
@@ -56,30 +61,29 @@ export default function useScrollEffects() {
 
     function activeLink() {
       const navbar = document.getElementById("navbar");
-      let sections = document.querySelectorAll(".section");
-      let passedSections = Array.from(sections).map((sect, i) => ({
-        y: sect.getBoundingClientRect().top - (navbar !== null ? navbar.offsetHeight : 0),
-        id: i,
-      })).filter(sect => sect.y <= 0);
+      const sections = document.querySelectorAll(".section");
+      const passedSections = Array.from(sections)
+        .map((sect, i) => ({
+          y: sect.getBoundingClientRect().top - (navbar?.offsetHeight ?? 0),
+          id: i,
+        }))
+        .filter(sect => sect.y <= 0);
 
-      let currentSectID = passedSections.at(-1)?.id;
-      let navLinks = document.querySelectorAll(".nav-link");
+      const currentSectID = passedSections.at(-1)?.id;
+      const navLinks = document.querySelectorAll(".nav-link");
 
-      navLinks.forEach(l => l.classList.remove("active"));
+      navLinks.forEach(link => link.classList.remove("active"));
       if (currentSectID !== undefined) {
         navLinks[currentSectID].classList.add("active");
       }
     }
 
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", () => {
-        stickyNav();
-        activeLink();
-        loadSkills();
-        mlCounter();
-      });
+      window.addEventListener("scroll", handleScroll);
 
-      return () => window.removeEventListener("scroll", stickyNav);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
     }
   }, []);
 }

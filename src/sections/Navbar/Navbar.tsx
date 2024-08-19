@@ -1,17 +1,21 @@
 "use client";
+
 import { useEffect, useState } from 'react';
 import { MdOutlineDarkMode } from 'react-icons/md';
+import useScrollEffects from '../../hooks/useScrollEffects';
 
 const Navbar = () => {
 
-    const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false);
     
-    useEffect(() => {
-      const navbar = document.getElementById("navbar");
-      if (navbar) {
-        navbar.classList.toggle("open", toggle);
-      }
-    }, [toggle]);
+  useScrollEffects();
+
+  useEffect(() => {
+    const navbar = document.getElementById("navbar");
+    if (navbar) {
+      navbar.classList.toggle("open", toggle);
+    }
+  }, [toggle]);
 
     return (
       <nav className='navbar' id='navbar'>

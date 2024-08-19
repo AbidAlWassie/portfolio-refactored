@@ -1,4 +1,3 @@
-import { images } from '../../refs';
 
 const Services = () => {
   return (
@@ -7,7 +6,7 @@ const Services = () => {
         <div className="services-info">
           <h1 className="sub-heading">My Services</h1>
           <h3 className="heading">Things I can do for my clients</h3>
-          <p className="text">I develop websites and applications tailored to my client&apos;s specific instructions and requirements, ensuring a customized and responsive digital solution.</p>
+          <p className="text">I develop websites and applications depending on my client&apos;s specific instructions and requirements, ensuring a customized and responsive digital solution.</p>
           <div className="milestones">
             <div className="ml">
               <h2 className="number"><span data-target="5">0</span>+</h2>
@@ -24,7 +23,7 @@ const Services = () => {
           </div>
           <div className="cta">
             <a href="mailto:abidalwassie@gmail.com" className="btn email">Hire me</a>
-            <a href={images.email} download className="btn secondary-btn">Download CV</a>
+            <a href="#" download className="btn secondary-btn">Download CV</a>
           </div>
         </div>
         
@@ -40,7 +39,7 @@ const Services = () => {
           <div className="service-card">
             <div className="card-desc">
               <h3>Backend Development</h3>
-              <p className="text">I mainly use PHP with the Laravel framework and sometimes Node.js and use MySQL, MongoDB, Firestore for database management, I deliver scalable and efficient server-side solutions with a focus on clean, maintainable code.</p>
+              <p className="text">I mainly use Next.js with auth libraries with Auth.js or Auth0 with databases like Postgres, MongoDB, etc. I might use BaaS like Firebase or Supabase to build a production ready fullstack app in a short time. I deliver scalable and efficient server-side solutions with a focus on clean, maintainable code.</p>
             </div>
             <a href="test" className="btn secondary-btn">Read more</a>
           </div>
@@ -56,7 +55,7 @@ const Services = () => {
           <div className="service-card">
             <div className="card-desc">
               <h3>Latest Tech</h3>
-              <p className="text">I leverage cutting-edge technologies in web development, staying at the forefront of industry advancements. From progressive frameworks to emerging tools, I ensure my work is innovative, efficient, and future-ready.</p>
+              <p className="text">I tend to use cutting-edge technologies in web development, staying at the forefront of industry advancements. From progressive frameworks to emerging tools, I ensure my work is innovative, efficient, and future-ready.</p>
             </div>
             <a href="test" className="btn secondary-btn">Read more</a>
           </div>
