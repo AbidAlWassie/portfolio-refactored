@@ -1,10 +1,6 @@
-// "use server";
-
-import 'tippy.js/dist/tippy.css';
+import Image from 'next/image';
 import { AiFillCopy } from 'react-icons/ai';
 import { FaPlay } from 'react-icons/fa';
-import Image from 'next/image';
-import Tippy from '@tippyjs/react';
 
 const YOUTUBE_PLAYLIST_ITEMS_API = "https://www.googleapis.com/youtube/v3/playlistItems";
 
@@ -18,11 +14,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default async function YouTube({ data }) {
-  // if (!data || !data.items) {
-  //   return <div>Loading...</div>;
-  // }
-
+export default function YouTube({ data }: { data: any }) {
   return (
     <div className="youtube section" id="youtube">
       <div className="container mx-auto mb-20 w-full">
@@ -41,36 +33,30 @@ export default async function YouTube({ data }) {
         </div>
 
         <div className="youtube-videos">
-          {data.items.map((item) => {
-            console.log(item.snippet.playlistId);
+          {data.items.map((item: { id: any; snippet?: {} | undefined; }) => {
             const { id, snippet = {} } = item;
-            const { title, thumbnails = {}, resourceId, playlistId } = snippet;
-            const { high = {} } = thumbnails;
+            const { title, thumbnails = {}, resourceId, playlistId } = snippet as { title: string, thumbnails: { high: { url: string } }, resourceId: { videoId: string }, playlistId: string };
+            const { high = { url: '' } } = thumbnails as { high: { url: string } };
+
             return (
-              <div key={id}>
-                <div className={`yt-card mix ${playlistId}`}>
-                  <div className="yt-image">
-                    <Image src={high.url} width={480} height={360} alt={title} />
-                    <div className="yt-overlay">
-                      <Tippy content={<div className="special"><span>Watch it on </span> <span className="tooltip">YouTube</span></div>} theme='default' placement='bottom' duration={0} arrow={true} animation="shift-toward-subtle" allowHTML={true}>
-                        <a href={`https://www.youtube.com/watch?v=${resourceId.videoId}`} target="_blank" rel="noreferrer" className="yt-icon yt">
-                          <FaPlay />
-                        </a>
-                      </Tippy>
-                      
-                      <Tippy content={<div className="special"><span>Copy link to </span> <span className="tooltip">Share</span></div>} theme='default' placement='bottom' duration={0} arrow={true} animation="shift-toward-subtle" allowHTML={true}>
-                        <a href="#!" className="yt-icon copy">
-                          <AiFillCopy />
-                        </a>
-                      </Tippy>
-                    </div>
-                  </div>
-                  <Tippy content={<div className="special"><span>Watch it on </span> <span className="tooltip">YouTube</span></div>} theme='default' placement='bottom' duration={0} arrow={true} animation="shift-toward-subtle" allowHTML={true}>
-                    <a href={`https://www.youtube.com/watch?v=${resourceId.videoId}`} target="_blank" rel="noreferrer" className='font-semibold text-center link'>
-                      {title}
+              <div key={id} className={`yt-card mix ${playlistId}`}>
+                <div className="yt-image">
+                  <Image src={high.url} width={480} height={360} alt={title} />
+                  <div className="yt-overlay">
+                    <a href={`https://www.youtube.com/watch?v=${resourceId.videoId}`} target="_blank" rel="noreferrer" className="yt-icon yt" aria-label="Watch video on YouTube">
+                      <FaPlay />
+                      <div className="tooltip">Watch it on YouTube</div>
                     </a>
-                  </Tippy>
+                    <a href="#!" className="yt-icon copy" aria-label="Copy video link">
+                      <AiFillCopy />
+                      <div className="tooltip">Copy link to Share</div>
+                    </a>
+                  </div>
                 </div>
+                <a href={`https://www.youtube.com/watch?v=${resourceId.videoId}`} target="_blank" rel="noreferrer" className='font-semibold text-center link' aria-label={`Watch ${title} on YouTube`}>
+                  {title}
+                  <div className="tooltip">Watch it on YouTube</div>
+                </a>
               </div>
             );
           })}
