@@ -22,13 +22,13 @@
 
   .filter-btn {
     font-weight: bold;
-    border-bottom: transparent 2px solid !important;
+    border-bottom: transparent 3px solid !important;
     padding-bottom: 2px;
   }
 
   .filter-btn.active {
     /* color: #339dff; */
-    border-bottom: #339dff 3px solid !important;  
+    border-bottom: #339dff 3px solid !important;
   }
 
   .navbar {

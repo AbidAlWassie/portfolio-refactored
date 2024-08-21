@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "prettier/prettier": [{ "singleQuote": true, "semi": false }],
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  }
 }

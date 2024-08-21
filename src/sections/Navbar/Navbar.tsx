@@ -1,7 +1,7 @@
 "use client";
 
+import ThemeController from "@/components/ThemeController";
 import { useEffect, useState } from 'react';
-import { MdOutlineDarkMode } from 'react-icons/md';
 import useScrollEffects from '../../hooks/useScrollEffects';
 
 const Navbar = () => {
@@ -47,15 +47,18 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <button className='toggleBtn' id='toggleBtn'>
-            <MdOutlineDarkMode />
-          </button>
+          <span className="flex flex-row">
+            <ThemeController />
 
           <div className='menuBtn hamburger' onClick={() => setToggle(!toggle)}>
             <div className="bar"></div>
             <div className="bar"></div>
             <div className="bar"></div>
           </div>
+          
+          </span>
+
+
 
         </div>
       </nav>

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
 
+/* Root Config */
 :root {
   --bg-color: #161e29;
   --main-color-1: #7f47e7;
@@ -50,6 +51,7 @@ body {
   --youtube-dark: #b91212;
 }
 
+/* Light Mode */
 body.light {
   --bg-color: #ecf5ff;
   --main-color-1: #2f90ff;
@@ -64,7 +66,7 @@ body.light {
   --bg-color-transparent: rgb(255, 255, 255, 0.1);
   --heading-color: #22306c;
   --text-color: #3b4650;
-  --text-color2: #414141;
+  --text-color2:#414141;
   --text-white: #303030;
   --content-inside: #f1f7ff;
   --content-focus: #e6f0ff;
