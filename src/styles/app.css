@@ -27,7 +27,7 @@
 
 
 /* Dark Mode */
-body {
+html {
   --bg-color: #161629;
   --main-color-1: #702FFF;
   --main-color-dark-1: #633DDB;
@@ -52,7 +52,7 @@ body {
 }
 
 /* Light Mode */
-body.light {
+html.light {
   --bg-color: #ecf5ff;
   --main-color-1: #2f90ff;
   --main-color-dark-1: #3d67db;
