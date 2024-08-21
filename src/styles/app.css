@@ -2,25 +2,27 @@
 
 /* Root Config */
 :root {
-  --bg-color: #161e29;
+  --bg-color: #161629;
   --main-color-1: #702FFF;
   --main-color-dark-1: #633DDB;
   --main-color-2: #008CFF;
   --main-color-dark-2: #1590e2;
   --main-color-3: #2f82ff;
   --main-color-dark-3: #3173c9;
-  --bg-color-1: #272034;
-  --bg-color-2: #2F2840;
-  --bg-color-3: #2F2840;
-  --bg-color-transparent: rgba(44, 44, 44, 0.4);
+  --bg-color-1: #262d3d;
+  --bg-color-2: #1D2530;
+  --bg-color-3: #2D3F4E;
+  --bg-color-transparent: rgba(19, 41, 66, 0.5);
   --heading-color: #ffffff;
   --text-color: #c5c5c5;
   --text-color2: #e4e4e7;
   --text-white: #fff;
-  --content-inside: #2B243A;
-  --path: #372d4e;
+  --content-inside: #242d3a;
+  --content-focus: #273241;
+  --path: #263f58;
   --path2: #d6dffa;
-  --tooltip-color: #313846;
+  --youtube: #FF0000;
+  --youtube-dark: #b91212;
   /* --footer: #B7AFC5;
   --footer-hover: #c2bccc; */
 }
