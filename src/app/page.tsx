@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import YouTubeCard from '../components/YouTubeCard';
 import { About, Contact, Header, Services, Skills, Testimonials, Work } from '../sections';
 import Layout from '../sections/Layout/Layout';
@@ -13,13 +12,6 @@ export default async function Home() {
 
   return (
     <Layout>
-      <Head>
-        <link rel="shortcut icon" href="shortcut-icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="utf-8" />
-        <meta name="description" content="Abid Al Wassie | Portfolio Website" />
-        <title>Abid Al Wassie | Portfolio</title>
-      </Head>
       <Header />
       <About />
       <Skills />

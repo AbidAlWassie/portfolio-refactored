@@ -102,7 +102,7 @@
   }
 
   .menuBtn {
-    @apply lg:hidden ml-6;
+    @apply lg:hidden;
   }
 
   #toggleBtn {
