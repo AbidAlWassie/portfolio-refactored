@@ -32,12 +32,12 @@ export default function ThemeController() {
   // Handle theme toggle and rendering
   return (
     <div
-      className="flex items-center justify-center cursor-pointer p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700"
+      className="flex items-center max-w-10 max-h-10 justify-center cursor-pointer p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
       aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
     >
       {resolvedTheme === 'dark' ? (
-        <FiSun className="text-yellow-500" size={24} />
+        <FiSun className="text-yellow-300" size={24} />
       ) : (
         <FiMoon className="text-gray-800 dark:text-gray-200" size={24} />
       )}

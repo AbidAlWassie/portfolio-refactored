@@ -29,7 +29,7 @@ const Navbar = () => {
             <span className="otherLetters" draggable="false">bid</span>
           </div>
         
-          <div className="nav-holder">
+          <div className="nav-holder mr-auto">
             <ul className='nav-list'>
               {[
                 'home',

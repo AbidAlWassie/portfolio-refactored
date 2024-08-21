@@ -990,7 +990,7 @@ textarea.form-input {
   }
 
   .navbar {
-    height: 100px;
+    height: 76px;
     transition: height 0.3s;
     overflow: hidden;
   }
