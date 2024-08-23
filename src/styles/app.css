@@ -167,7 +167,6 @@ body {
 html {
   color-scheme: dark;
   scrollbar-color: #686868 #424242;
-  /* color-scheme: dark; */
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;

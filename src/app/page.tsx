@@ -1,6 +1,6 @@
 import YouTubeCard from '../components/YouTubeCard';
-import { About, Contact, Header, Services, Skills, Testimonials, Work } from '../sections';
-import Layout from '../sections/Layout/Layout';
+import { About, Contact, Header, Services, Skills, Testimonials, Work } from '../layouts';
+import Layout from '../layouts/Layout/Layout';
 
 const YOUTUBE_PLAYLIST_ITEMS_API = "https://www.googleapis.com/youtube/v3/playlistItems";
 
