@@ -1,5 +1,5 @@
 import YouTubeCard from '../components/YouTubeCard';
-import { About, Contact, Header, Services, Skills, Testimonials, Work } from '../layouts';
+import { About, Contact, Header, Services, Skills, Techstack, Testimonials, Work } from '../layouts';
 import Layout from '../layouts/Layout/Layout';
 
 const YOUTUBE_PLAYLIST_ITEMS_API = "https://www.googleapis.com/youtube/v3/playlistItems";
@@ -15,6 +15,7 @@ export default async function Home() {
       <Header />
       <About />
       <Skills />
+      <Techstack />
       <YouTubeCard data={data} />
       <Services />
       <Work />

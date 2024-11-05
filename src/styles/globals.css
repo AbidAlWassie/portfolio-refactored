@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
 
+@layer components {
   .link:hover {
     @apply underline;
   }
