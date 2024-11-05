@@ -12,19 +12,19 @@ const Work = () => {
   const projects = [
     {
       id: 1,
+      title: 'Realtime Chat App',
+      category: 'backend',
+      image: images.realtime_chat1,
+      liveDemo: 'https://realtime-chat-by-abid.vercel.app',
+      code: 'https://github.com/AbidAlWassie/realtime_chat'
+    },
+    {
+      id: 2,
       title: 'DevEleven-io',
       category: 'frontend',
       image: images.team_website1,
       liveDemo: 'https://develeven-io.vercel.app/',
       code: 'https://github.com/DEVELEVEN-io/develeven-io'
-    },
-    {
-      id: 2,
-      title: 'Web Design',
-      category: 'frontend',
-      image: images.web_design1,
-      liveDemo: 'null',
-      code: 'code'
     },
     {
       id: 3,

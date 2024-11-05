@@ -34,10 +34,10 @@ const Navbar = () => {
               {[
                 'home',
                 'about',
+                'work',
                 'skills',
                 'youtube',
                 'services',
-                'work',
                 'contact'
               ].map((item) => (
                   <li className='nav-link' key={`link-${item}`}>
