@@ -1,6 +1,12 @@
 "use client";
 
 import ThemeController from "@/components/ThemeController";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { useEffect, useState } from 'react';
 import useScrollEffects from '../../hooks/useScrollEffects';
 
@@ -48,7 +54,13 @@ const Navbar = () => {
           </div>
 
           <span className="flex flex-row">
-            <ThemeController />
+
+            <TooltipProvider delayDuration={100}>
+              <Tooltip>
+                <TooltipTrigger><ThemeController /></TooltipTrigger>
+                <TooltipContent><div className="font-medium">Toggle <span className="text-blue-400 font-semibold">Theme</span></div></TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
 
           <div className='menuBtn hamburger' onClick={() => setToggle(!toggle)}>
             <div className="bar"></div>
