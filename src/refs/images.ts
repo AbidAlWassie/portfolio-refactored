@@ -12,21 +12,34 @@ import research from '../assets/svgs/research.svg';
 import testing from '../assets/svgs/testing.svg';
 import triangle from '../assets/triangle.png';
 
+import mongodb from '../assets/mongodb.png';
 import mysql from '../assets/MySQL2.png';
+import postgresql from '../assets/postgresql.png';
+
+import auth0 from '../assets/auth0.png';
 import authjs from '../assets/authjs.png';
+import aws from '../assets/aws.png';
+import azure from '../assets/azure.png';
+import bash from '../assets/bash.png';
 import cpp from '../assets/cpp.png';
+import cs from '../assets/cs.png';
 import css from '../assets/css.png';
 import drizzle from '../assets/drizzle.png';
 import figma from '../assets/figma.png';
 import firebase from '../assets/firebase.png';
 import flutter from '../assets/flutter.png';
+import framer from '../assets/framer.png';
+import gcp from '../assets/gcp.png';
 import git from '../assets/git.png';
+import github from '../assets/github.png';
 import graphql from '../assets/graphql.png';
 import html from '../assets/html.png';
 import javascript from '../assets/javascript.png';
 import laravel from '../assets/laravel.png';
-import mongodb from '../assets/mongodb.png';
+import linux from '../assets/linux.png';
+
 import nextjs from '../assets/nextjs.png';
+import nginx from '../assets/nginx.png';
 import node from '../assets/node.png';
 import prisma from '../assets/prisma.png';
 import python from '../assets/python.png';
@@ -34,6 +47,8 @@ import react from '../assets/react.png';
 import tailwind from '../assets/tailwind.png';
 import ts from '../assets/ts.svg';
 import typescript from '../assets/typescript.png';
+import visual_studio from '../assets/visual_studio.png';
+import vs_code from '../assets/vs_code.png';
 import vue from '../assets/vue.png';
 
 import web_design1 from '../assets/web_design1.jpg';
@@ -56,11 +71,20 @@ const data = {
   dots,
   prototype,
   research,
+  aws,
+  auth0,
+  azure,
+  nginx,
+  gcp,
   testing,
   design,
+  framer,
+  vs_code,
+  visual_studio,
   nextjs,
   firebase,
   cpp,
+  cs,
   html,
   css,
   javascript,
@@ -68,7 +92,11 @@ const data = {
   laravel,
   tailwind,
   mysql,
+  postgresql,
+  linux,
   git,
+  github,
+  bash,
   figma,
   flutter,
   graphql,

@@ -1,78 +1,62 @@
 // src/layouts/Tech/Techstack.tsx
 "use client";
 
+import Image from "next/image";
+import { images } from '../../refs';
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
 import { BsTools } from "react-icons/bs";
-import { FaCode, FaCog, FaServer, FaShieldAlt } from "react-icons/fa";
+import { FaCode, FaCog, FaServer } from "react-icons/fa";
 import { MdOutlineWeb } from "react-icons/md";
 import { PiCircuitryFill } from "react-icons/pi";
 import {
-  SiAmazonwebservices,
-  SiAuth0,
-  SiCsharp,
-  SiCss3,
   SiExpress,
-  SiFigma,
-  SiFramer,
-  SiGit,
-  SiGithub,
-  SiGnubash,
-  SiGooglecloud,
-  SiHtml5,
-  SiJavascript,
-  SiLinux,
-  SiMicrosoftazure,
-  SiMongodb,
-  SiNextdotjs,
-  SiNginx,
-  SiNodedotjs,
-  SiPostgresql,
-  SiPrisma,
-  SiPython,
-  SiReact,
   SiShadcnui,
-  SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-  SiVisualstudio,
-  SiVisualstudiocode,
+  SiVercel
 } from "react-icons/si";
 import techList from "./techList";
 
 const iconMap: { [key: string]: JSX.Element } = {
-  JavaScript: <SiJavascript className="h-4 w-4" />,
-  "Node.js": <SiNodedotjs className="h-4 w-4" />,
-  Express: <SiExpress className="h-4 w-4" />,
-  GCP: <SiGooglecloud className="h-4 w-4" />,
-  AWS: <SiAmazonwebservices className="h-4 w-4" />,
-  Azure: <SiMicrosoftazure className="h-4 w-4" />,
-  Nginx: <SiNginx className="h-4 w-4" />,
-  React: <SiReact className="h-4 w-4" />,
-  "Next.js": <SiNextdotjs className="h-4 w-4" />,
-  TailwindCSS: <SiTailwindcss className="h-4 w-4" />,
-  "Framer Motion": <SiFramer className="h-4 w-4" />,
-  Python: <SiPython className="h-4 w-4" />,
+  JavaScript: <Image src={images.javascript} alt="JavaScript" width={24} height={24} />,
+  TypeScript: <Image src={images.typescript} alt="TypeScript" width={24} height={24} />,
+  Python: <Image src={images.python} alt="Python" width={24} height={24} />,
+  HTML5: <Image src={images.html} alt="HTML5" width={24} height={24} />,
+  CSS3: <Image src={images.css} alt="CSS3" width={24} height={24} />,
+
+
+  "C#": <Image src={images.cs} alt="C#" width={24} height={24} />,
+
+  GCP: <Image src={images.gcp} alt="GCP" width={24} height={24} />,
+  AWS: <Image src={images.aws} alt="AWS" width={24} height={24} />,
+  Azure: <Image src={images.azure} alt="Azure" width={24} height={24} />,
+  Nginx: <Image src={images.nginx} alt="Nginx" width={24} height={24} />,
+
+  React: <Image src={images.react} alt="React" width={24} height={24} />,
+  "Next.js": <Image src={images.nextjs} alt="Next.js" width={24} height={24} />,
+  TailwindCSS: <Image src={images.tailwind} alt="TailwindCSS" width={24} height={24} />,
+  "Framer Motion": <Image src={images.framer} alt="Framer Motion" width={24} height={24} />,
   Shadcn: <SiShadcnui className="h-4 w-4" />,
-  PostgreSQL: <SiPostgresql className="h-4 w-4" />,
-  MongoDB: <SiMongodb className="h-4 w-4" />,
-  "Prisma-ORM": <SiPrisma className="h-4 w-4" />,
-  "Next-Auth": <FaShieldAlt className="h-4 w-4" />,
-  "JWT/OAUTH": <SiAuth0 className="h-4 w-4" />,
-  Git: <SiGit className="h-4 w-4" />,
-  GitHub: <SiGithub className="h-4 w-4" />,
-  Linux: <SiLinux className="h-4 w-4" />,
-  "VS Code": <SiVisualstudiocode className="h-4 w-4" />,
-  "Visual Studio": <SiVisualstudio className="h-4 w-4" />,
-  Bash: <SiGnubash className="h-4 w-4" />,
+
+  PostgreSQL: <Image src={images.postgresql} alt="PostgreSQL" width={24} height={24} />,
+  MongoDB: <Image src={images.mongodb} alt="MongoDB" width={24} height={24} />,
+  "Prisma-ORM": <Image src={images.prisma} alt="Prisma-ORM" width={24} height={24} />,
+  "Next-Auth": <Image src={images.authjs} alt="Prisma-ORM" width={24} height={24} />,
+  "JWT/OAUTH": <Image src={images.auth0} alt="Prisma-ORM" width={22} height={22} />,
+  "Node.js": <Image src={images.node} alt="Node.js" width={24} height={24} />,
+  Express: <SiExpress className="h-4 w-4" />,
+
+  Linux: <Image src={images.linux} alt="Linux" width={24} height={24} />,
+  "VS Code": <Image src={images.vs_code} alt="VS Code" width={24} height={24} />,
+  "Visual Studio": <Image src={images.visual_studio} alt="Visual Studio" width={24} height={24} />,
   Vercel: <SiVercel className="h-4 w-4" />,
-  Figma: <SiFigma className="h-4 w-4" />,
-  TypeScript: <SiTypescript className="h-4 w-4" />,
-  "C#": <SiCsharp className="h-4 w-4" />,
-  HTML5: <SiHtml5 className="h-4 w-4" />,
-  CSS3: <SiCss3 className="h-4 w-4" />,
+  
+  Git: <Image src={images.git} alt="Github" width={24} height={24} />,
+  GitHub: <Image src={images.github} alt="Git" width={24} height={24} />,
+  Bash: <Image src={images.bash} alt="Bash" width={24} height={24} />,
+  Figma: <Image src={images.figma} alt="Figma" width={24} height={24} />,
 }
 
 const techIconMap: { [key: string]: JSX.Element } = {
@@ -112,9 +96,9 @@ export default function Techstack() {
               <CardHeader className="pb-4 TechTypeCard">
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <span className="text-primary">{techIconMap[`${skillSet.type}`]}</span>
-                  {skillSet.type}
+                  <span className="text-2xl">{skillSet.type}</span>
                 </CardTitle>
-                <Separator className="mt-2.5" />
+                <Separator className="mt-2.5 mb-2" />
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -126,7 +110,7 @@ export default function Techstack() {
                     >
                       <Badge
                         variant="custom"
-                        className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium hover:bg-secondary/80"
+                        className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-lg font-medium hover:bg-secondary/80 cursor-pointer"
                       >
                         {iconMap[skill]}
                         {skill}

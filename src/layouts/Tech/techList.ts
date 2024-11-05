@@ -33,7 +33,6 @@ const techList: SkillType[] = [
     tech: [
       "VS Code",
       "Visual Studio",
-      "Bash",
       "Linux",
       "Figma",
     ]
